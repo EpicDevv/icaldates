@@ -13,7 +13,7 @@ export default function Home() {
     title: "My Title",
     description: "My Description",
     startTime: "2022-04-11T10:30:00+10:00",
-    endTime: "2022-04-11T12:00:00+10:00",
+    endTime: "2022-04-14T12:00:00+10:00",
     location: "10 Carlotta St, Artarmon NSW 2064, Australia",
     attendees: [
       "Hello World <hello@world.com>",
