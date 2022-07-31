@@ -6,7 +6,8 @@ import ICalendarLink from "react-icalendar-link";
 
 
 export default function Home() {
-
+  const [data,setData] = useState([])
+  console.log(data)
   const event = {
     title: "My Title",
     description: "My Description",
@@ -18,8 +19,19 @@ export default function Home() {
       "Hey <hey@test.com>",
     ]
   }
-
-
+useEffect(()=> {
+  const getDates = async() => {
+    const response = await fetch("/api/getical");
+    const data = await response.json();
+    // const arrOfObj1 = Object.values(data);
+    const withNestedKeys = Object.entries(data).map(entry => {
+      return {[entry[0]]: entry[1]};
+    });
+    setData(withNestedKeys);
+  }
+  getDates()
+},[])
+ 
   return (
     <div>
        <ICalendarLink event={event}>
